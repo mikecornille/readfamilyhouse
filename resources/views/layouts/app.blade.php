@@ -8,10 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Read House</title>
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    
 </head>
 <body>
     <div id="app">
@@ -29,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Read Family House
                     </a>
                 </div>
 
@@ -52,6 +55,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{ URL::to('/reservation') }}">View Reservations</a></li>
+                                    <li><a href="{{ URL::to('/reservation/create') }}">New Reservation</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -63,6 +68,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    
                                 </ul>
                             </li>
                         @endguest
@@ -76,5 +82,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
+    
 </body>
 </html>

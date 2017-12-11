@@ -23,3 +23,18 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Reservation::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'user_name' => $faker->name(),
+        'user_email' => $faker->email(),
+        'user_id' => $faker->randomNumber($nbDigits = 1, $strict = true),
+        'guests' => $faker->sentence(),
+        'guest_count' => $faker->randomNumber($nbDigits = 1, $strict = true),
+        'start_date' => $faker->date($format = 'm/d/Y'),
+        'end_date' => $faker->date($format = 'm/d/Y'),
+        
+        ];
+});

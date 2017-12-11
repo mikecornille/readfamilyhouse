@@ -11,6 +11,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(ReservationsTableSeeder::class);
+        $this->seedUser();
+    }
+
+    public function seedUser()
+    {
+    	    DB::table('users')->insert([
+             'name' => 'Mike Cornille',
+             'email' => 'mikecornille@gmail.com',
+             'password' => bcrypt('password'),
+             'remember_token' => 'SMDvF3btchRMWIHKVWcEjVKvpHrIvCr6FCtwSVsBvkQct39lY5eCibZrgqxW'
+         ]);
+
+    	   
     }
 }

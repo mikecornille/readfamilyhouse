@@ -17,7 +17,7 @@
 <div class="row">
 	<div class="col-md-6">
 		{{ Form::label('guest_count', 'Total Guests') }}
-	  	{{ Form::selectRange('guest_count', 1, 25, ['class' => 'form-control']) }}
+	  	{{ Form::selectRange('guest_count', 1, 25, (isset($reservation->guest_count) ? $reservation->guest_count : 1 ), ['class' => 'form-control']) }}
 	</div>
 </div>
 

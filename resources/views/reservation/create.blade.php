@@ -4,6 +4,10 @@
 
 <div class="container">
 
+	
+    
+
+
 @if (session('status'))
     <div class="alert alert-success alert-dismissible">
         
@@ -26,8 +30,12 @@
     <div class="col-md-6 col-md-offset-3">
 
             {!! Form::open(['route' => 'reservation.store']) !!}
+
+
           		@include('partials.create_reservation', ['submitButtonText' => 'New Reservation'])
             {!! Form::close() !!}
+
+
 
     </div>
 </div>

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Read House</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -78,6 +78,7 @@
             @endif
 
             <div class="content">
+                <img src="../images/steamboat.jpg" class="img-responsive" style="margin: 0 auto;">
                 <div class="title m-b-md">
                     Read Family House
                 </div>

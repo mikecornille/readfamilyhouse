@@ -11,16 +11,19 @@
     <title>Read House</title>
 
     <!-- Styles -->
-
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     
 </head>
 <body>
+    
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
+
                 <div class="navbar-header">
+
+
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
@@ -55,6 +58,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{ URL::to('/home') }}">Home Info</a></li>
                                     <li><a href="{{ URL::to('/reservation') }}">View Reservations</a></li>
                                     <li><a href="{{ URL::to('/reservation/create') }}">New Reservation</a></li>
                                     <li>
@@ -81,7 +85,12 @@
     </div>
 
     <!-- Scripts -->
+   
     <script src="{{ asset('js/app.js') }}"></script>
+
+    
+
+     
     
     
 </body>

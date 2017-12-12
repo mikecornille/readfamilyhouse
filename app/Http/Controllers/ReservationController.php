@@ -58,7 +58,7 @@ class ReservationController extends Controller
         
         $store->save();
 
-        return back()->with('status', 'New Reservation Created!');
+        return redirect('/reservation')->with('status', 'New Reservation Created!');
     }
 
     /**
@@ -69,9 +69,8 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        $reservation = Reservation::findOrFail($id);
+
         
-        return view('reservation/edit', compact('reservation', $reservation));
     }
 
     /**
@@ -82,7 +81,9 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reservation = Reservation::findOrFail($id);
+        
+        return view('reservation/edit', compact('reservation', $reservation));
     }
 
     /**
@@ -94,7 +95,24 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        date_default_timezone_set("America/Chicago");
+        
+        $this->validate($request, [
+
+              'start_date' => 'required',             
+              'end_date' => 'required',
+              'guests' => 'required',
+              'guest_count' => 'required',           
+              
+        ]);
+
+        $reservation = Reservation::findOrFail($id);
+
+        $reservation->update($request->all());
+
+       
+        return redirect('/reservation')->with('status', 'Your Reservation Has Been Edited!');
+        
     }
 
     /**

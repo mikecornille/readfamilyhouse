@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-md-3">
-	  	{{ Form::label('start_date', 'Start Date') }}
+	  	{{ Form::label('start_date', 'Arrival Date') }}
 	  	{{ Form::text('start_date', null, ['class' => 'form-control']) }}
 	</div>
 	<div class="col-md-3">
-		{{ Form::label('end_date', 'End Date') }}
+		{{ Form::label('end_date', 'Departure Date') }}
 	  	{{ Form::text('end_date', null, ['class' => 'form-control']) }}
 	</div>
 </div>

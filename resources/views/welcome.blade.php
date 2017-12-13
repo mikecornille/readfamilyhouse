@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-image: url('images/steamboat.jpg');
-                color: white;
+                color: #FFEBCD;
                 font-family: 'Raleway', sans-serif;
                 font-weight: bold;
                 
@@ -53,11 +53,11 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
             }
 
             .links > a {
-                color: white;
+                color: #FFEBCD;
                 padding: 0 25px;
                 font-size: 14px;
                 font-weight: bold;

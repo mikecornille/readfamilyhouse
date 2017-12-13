@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image: url('images/steamboat.jpg');
+                background-image: url('images/steamboat_glow_krak.jpg');
                 color: #FFEBCD;
                 font-family: 'Raleway', sans-serif;
                 font-weight: bold;

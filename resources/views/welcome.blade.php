@@ -13,12 +13,19 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url('images/steamboat.jpg');
+                color: white;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
+                font-weight: bold;
+                
                 margin: 0;
+                height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
             }
 
             .full-height {
@@ -50,13 +57,14 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
+                font-size: 14px;
+                font-weight: bold;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                text-shadow: 0 0 10px rgba(0,0,0,9.5);
             }
 
             .m-b-md {
@@ -65,6 +73,7 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -76,14 +85,13 @@
                     @endauth
                 </div>
             @endif
-            <div class="container">
+
             <div class="content">
-                <img src="../images/steamboat.jpg" class="img-responsive" style="margin: 0 auto;">
-                <div class="title m-b-md">
+               <!--  <img src="../images/steamboat.jpg" class="img-responsive" style="margin: 0 auto;"> -->
+                <div class="title m-b-md" style="text-shadow: 0 0 10px rgba(0,0,0,9.5);">
                     Read Family House
                 </div>
             </div>
-        </div>
         </div>
     </body>
 </html>

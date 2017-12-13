@@ -81,7 +81,7 @@
                  </select>
             </div>
         </div>  
-<button id="new_reservation_button" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> NEW</button>
+<button id="new_reservation_button" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> UPDATE</button>
 </div>
 </div>
 

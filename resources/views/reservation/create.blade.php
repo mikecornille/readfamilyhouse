@@ -26,19 +26,68 @@
     </div>
 @endif
 
+<h4 class="text-center" style="font-family: 'Raleway', sans-serif; font-weight: bold;"><a href="/reservation">Back to Reservations</a></h4>
+
+<form role="form" class="form-horizontal" method="POST" action="/reservation">
+        
+        {{ csrf_field() }}
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
-            {!! Form::open(['route' => 'reservation.store']) !!}
-
-
-          		@include('partials.create_reservation', ['submitButtonText' => 'New Reservation'])
-            {!! Form::close() !!}
-
-
-
-    </div>
+		<div class="row">
+			<div class="col-md-3">
+				<label for="start_date">Arrival Date</label>
+	  			<input type="text" id="start_date" class="date form-control" name="start_date" value="{{ old('start_date') }}">
+			</div>
+			<div class="col-md-3">
+				<label for="end_date">Departure Date</label>
+	  			<input type="text" id="end_date" class="date form-control" name="end_date" value="{{ old('end_date') }}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="guests">Guests and Notes</label>
+  				<textarea class="form-control" rows="5" id="guests" name="guests">{{ old('guests') }}</textarea>
+	  		</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="guest_count">Total Guests</label>
+				<select class="form-control" id="guest_count" name="guest_count">
+					@if(old('guest_count'))<option>{{ old('guest_count') }}</option>@endif
+				    <option>1</option>
+				    <option>2</option>
+				    <option>3</option>
+				    <option>4</option>
+				    <option>5</option>
+				    <option>6</option>
+				    <option>7</option>
+				    <option>8</option>
+				    <option>9</option>
+				    <option>10</option>
+				    <option>11</option>
+				    <option>12</option>
+				    <option>13</option>
+				    <option>14</option>
+				    <option>15</option>
+				    <option>16</option>
+				    <option>17</option>
+				    <option>18</option>
+				    <option>19</option>
+				    <option>20</option>
+				    <option>21</option>
+				    <option>22</option>
+				    <option>23</option>
+				    <option>24</option>
+				    <option>25</option>
+				 </select>
+			</div>
+		</div>  
+<button id="new_reservation_button" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> NEW</button>
 </div>
+</div>
+
+</form>
 </div>
 
 @endsection

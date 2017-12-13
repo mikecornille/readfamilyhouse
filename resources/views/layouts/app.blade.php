@@ -10,14 +10,23 @@
 
     <title>Read House</title>
 
+    
+
+ 
+
     <!-- Styles -->
     
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
     
 </head>
 <body>
     
-    <div id="app">
+    
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
 
@@ -48,6 +57,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        <li><a href="{{ URL::to('/home') }}">Home Info</a></li>
+                                    <li><a href="{{ URL::to('/reservation') }}">View Reservations</a></li>
+                                    <li><a href="{{ URL::to('/reservation/create') }}">New Reservation</a></li>
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
@@ -58,9 +70,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ URL::to('/home') }}">Home Info</a></li>
-                                    <li><a href="{{ URL::to('/reservation') }}">View Reservations</a></li>
-                                    <li><a href="{{ URL::to('/reservation/create') }}">New Reservation</a></li>
+                                    
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -75,6 +85,7 @@
                                     
                                 </ul>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
@@ -82,16 +93,11 @@
         </nav>
 
         @yield('content')
-    </div>
+    
 
     <!-- Scripts -->
-   
-    <script src="{{ asset('js/app.js') }}"></script>
 
-    
-
-     
-    
+    <script src="{{ asset('js/app.js') }}"></script>  
     
 </body>
 </html>

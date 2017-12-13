@@ -76,13 +76,14 @@
                     @endauth
                 </div>
             @endif
-
+            <div class="container">
             <div class="content">
                 <img src="../images/steamboat.jpg" class="img-responsive" style="margin: 0 auto;">
                 <div class="title m-b-md">
                     Read Family House
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>

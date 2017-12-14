@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-
+<h2 class="text-center" style="font-family: 'Raleway', sans-serif; font-weight: bold;"><u>Reservations</u></h2>
 @if (session('status'))
     <div class="alert alert-success alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -37,8 +37,8 @@
 
                 	@foreach ($res as $r)
                     <tr>
-						<td data-title="Start Date">{{ $r->start_date }}</td>
-						<td data-title="End Date">{{ $r->end_date }}</td>
+						<td data-title="Arrival">{{ $r->start_date }}</td>
+						<td data-title="Departure">{{ $r->end_date }}</td>
 						<td data-title="Creator">{{ $r->user_name }}</td>
 						<td data-title="Guest Count">{{ $r->guest_count }}</td>
 						<td data-title="Guests">{{ $r->guests }}</td>

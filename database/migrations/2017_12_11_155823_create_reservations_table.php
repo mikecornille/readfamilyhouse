@@ -20,8 +20,8 @@ class CreateReservationsTable extends Migration
             $table->string('user_email')->nullable();
             $table->text('guests')->nullable();
             $table->string('guest_count')->nullable();
-            $table->string('start_date')->nullable();
-            $table->string('end_date')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }

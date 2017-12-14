@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Reservation;
+use App\Info;
 
-use Carbon\Carbon;
-
-class ReservationController extends Controller
+class InfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +15,11 @@ class ReservationController extends Controller
      */
     public function index()
     {
+        $info = Info::all();
 
-        
-        $res = Reservation::orderBy('start_date', 'desc')->get();
+       
 
-        //I want the most upcoming date at the top sort by arrival date 
-
-        return view('reservation', compact('res', $res));
+        return view('info', compact('info', $info));
     }
 
     /**
@@ -33,7 +29,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('reservation/create');
+        return view('info/create');
     }
 
     /**
@@ -44,28 +40,22 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-
-
         date_default_timezone_set("America/Chicago");
         
         $this->validate($request, [
 
-              'start_date' => 'required',             
-              'end_date' => 'required',
-              'guests' => 'required',
-              'guest_count' => 'required',
+              'title' => 'required',             
+              'body' => 'required',
 
         ]);
 
-        $store = New Reservation($request->all());
+        $store = New Info($request->all());
 
-        $store->user_id = \Auth::user()->id;
-        $store->user_email = \Auth::user()->email;
-        $store->user_name = \Auth::user()->name;
+        $store->creator = \Auth::user()->name;
         
         $store->save();
 
-        return redirect('/reservation')->with('status', 'New Reservation Created!');
+        return redirect('/info')->with('status', 'New Content Created!');
     }
 
     /**
@@ -76,7 +66,6 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-
         
     }
 
@@ -88,9 +77,9 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        $reservation = Reservation::findOrFail($id);
+        $info = Info::findOrFail($id);
         
-        return view('reservation/edit', compact('reservation', $reservation));
+        return view('info/edit', compact('info', $info));
     }
 
     /**
@@ -106,20 +95,18 @@ class ReservationController extends Controller
         
         $this->validate($request, [
 
-              'start_date' => 'required',             
-              'end_date' => 'required',
-              'guests' => 'required',
-              'guest_count' => 'required',           
+              'title' => 'required',             
+              'body' => 'required',
+                         
               
         ]);
 
-        $reservation = Reservation::findOrFail($id);
+        $info = Info::findOrFail($id);
 
-        $reservation->update($request->all());
+        $info->update($request->all());
 
        
-        return redirect('/reservation')->with('status', 'Your Reservation Has Been Edited!');
-        
+        return redirect('/info')->with('status', 'Your Content Has Been Edited!');
     }
 
     /**
@@ -130,8 +117,6 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-        $reservation = Reservation::findOrFail($id);
-        $reservation->delete();
-        return back()->with('status', 'Your Reservation Was Deleted');
+        //
     }
 }

@@ -971,7 +971,7 @@ module.exports = __webpack_require__(42);
 /***/ (function(module, exports, __webpack_require__) {
 
 $('.date').datepicker({
-  format: 'mm-dd-yyyy',
+  format: 'yyyy-mm-dd',
   autoclose: true
 });
 /**

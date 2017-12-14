@@ -24,4 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('reservation', 'ReservationController');
 
+Route::resource('info', 'InfoController');
+
 });

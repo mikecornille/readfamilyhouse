@@ -33,8 +33,18 @@ $factory->define(App\Reservation::class, function (Faker $faker) {
         'user_id' => $faker->randomNumber($nbDigits = 1, $strict = true),
         'guests' => $faker->sentence(),
         'guest_count' => $faker->randomNumber($nbDigits = 1, $strict = true),
-        'start_date' => $faker->date($format = 'm/d/Y'),
-        'end_date' => $faker->date($format = 'm/d/Y'),
+        'start_date' => $faker->date($format = 'Y-m-d'),
+        'end_date' => $faker->date($format = 'Y-m-d'),
         
+        ];
+});
+
+$factory->define(App\Info::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'title' => $faker->word(),
+        'body' => $faker->sentence(),
+        'creator' => $faker->name(),  
         ];
 });

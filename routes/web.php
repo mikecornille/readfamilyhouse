@@ -26,4 +26,6 @@ Route::resource('reservation', 'ReservationController');
 
 Route::resource('info', 'InfoController');
 
+Route::get('email/{id}', 'ReservationController@email');
+
 });

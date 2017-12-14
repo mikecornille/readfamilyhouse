@@ -8,9 +8,30 @@ use App\Reservation;
 
 use Carbon\Carbon;
 
+use App\Mail\Notify;
+
+use App\User;
+
 class ReservationController extends Controller
 {
-    /**
+
+    public function email($id)
+    {
+        $users = User::all();
+
+        foreach($users as $user)
+        {
+
+        $reservation = Reservation::findOrFail($id);
+
+        \Mail::to($user->email)->queue(new Notify($reservation));
+
+        }
+
+        return back()->with('status', 'Your Reservation Was Emailed To All Members');
+    }
+    /*
+    *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

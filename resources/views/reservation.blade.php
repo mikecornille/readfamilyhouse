@@ -19,6 +19,7 @@
 
                         <th class="numeric">Arrival</th>
                         <th class="numeric">Departure</th>
+                        <th class="numeric">Email All</th>
                         <th class="numeric">Creator</th>
                         <th class="numeric">Guest Count</th>
                         <th class="numeric">Guests</th>
@@ -37,8 +38,10 @@
 
                 	@foreach ($res as $r)
                     <tr>
+
 						<td data-title="Arrival">{{ $r->start_date }}</td>
 						<td data-title="Departure">{{ $r->end_date }}</td>
+                        <td data-title="Email All"><a class="btn btn-info" href="{{ URL::to('/email/' . $r->id) }}">Email</a></td>
 						<td data-title="Creator">{{ $r->user_name }}</td>
 						<td data-title="Guest Count">{{ $r->guest_count }}</td>
 						<td data-title="Guests">{{ $r->guests }}</td>

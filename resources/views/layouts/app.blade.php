@@ -57,6 +57,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        <li><a href="{{ URL::to('/events') }}">Calendar View</a></li>
                         <li><a href="{{ URL::to('/info') }}">Home Info</a></li>
                         <li><a href="{{ URL::to('/info/create') }}">Add Home Info</a></li>
                                     <li><a href="{{ URL::to('/reservation') }}">View Reservations</a></li>

@@ -42,6 +42,15 @@ class ReservationController extends Controller
         
         $res = Reservation::orderBy('start_date', 'desc')->get();
 
+        // $res->transform(function($res) {
+            
+        //     $res->start_date = Carbon::toFormattedDateString($res->start_date);
+
+        //     return $res;
+        // });
+
+       
+
         //I want the most upcoming date at the top sort by arrival date 
 
         return view('reservation', compact('res', $res));

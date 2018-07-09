@@ -28,4 +28,7 @@ Route::resource('info', 'InfoController');
 
 Route::get('email/{id}', 'ReservationController@email');
 
+Route::get('events', 'EventController@index')->name('events.index');
+Route::post('events', 'EventController@addEvent')->name('events.add');
+
 });

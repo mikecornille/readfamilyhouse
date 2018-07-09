@@ -24,7 +24,6 @@
                         <th class="numeric">Guest Count</th>
                         <th class="numeric">Guests</th>
                         <th class="numeric">Created At</th>
-                        <th class="numeric">Last Edited</th>
                         <th class="numeric">Edit</th>
                         <th class="numeric">Delete</th>
                   
@@ -39,14 +38,13 @@
                 	@foreach ($res as $r)
                     <tr>
 
-						<td data-title="Arrival">{{ $r->start_date }}</td>
-						<td data-title="Departure">{{ $r->end_date }}</td>
+						<td data-title="Arrival">{{ date("l M j, Y", strtotime($r->start_date)) }}</td>
+						<td data-title="Departure">{{ date("l M j, Y", strtotime($r->end_date)) }}</td>
                         <td data-title="Email All"><a class="btn btn-info" href="{{ URL::to('/email/' . $r->id) }}">Email</a></td>
 						<td data-title="Creator">{{ $r->user_name }}</td>
 						<td data-title="Guest Count">{{ $r->guest_count }}</td>
 						<td data-title="Guests">{{ $r->guests }}</td>
-                        <td data-title="Created At">{{ $r->created_at }}</td>
-                        <td data-title="Last Edited">{{ $r->updated_at }}</td>
+                        <td data-title="Created At">{{ date("l M j, Y", strtotime($r->created_at)) }}</td>
 						<td data-title="Edit">{!! Html::linkRoute('reservation.edit', 'Edit', array($r->id), ['class' => 'btn btn-success btn-block']) !!}</td>
 						<td data-title="Delete">{!! Form::open(['route' => ['reservation.destroy', $r->id], 'method' => 'DELETE']) !!}
 		                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}

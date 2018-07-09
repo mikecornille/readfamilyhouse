@@ -48,12 +48,17 @@ class ReservationController extends Controller
         
         $res = Reservation::where('start_date', '>=', $pastDate)->orderBy('start_date', 'desc')->get();
 
-        // $res->transform(function($res) {
-            
-        //     $res->start_date = Carbon::toFormattedDateString($res->start_date);
+        $res->map(function ($res) {
 
-        //     return $res;
-        // });
+            //Get todays date to do math
+            $today_raw = Carbon::now('America/Denver');
+            //Get the billed date
+            $start_date = Carbon::createFromFormat('Y-m-d', $res->start_date);
+            //Send to datatable
+            $diff = (string)$today_raw->diffInDays($start_date, false);
+                $res['countdown'] = $diff;
+                return $res;
+            });
 
        
 

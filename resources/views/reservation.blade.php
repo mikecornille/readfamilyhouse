@@ -23,7 +23,7 @@
                         <th class="numeric">Creator</th>
                         <th class="numeric">Guest Count</th>
                         <th class="numeric">Guests</th>
-                        <th class="numeric">Created At</th>
+                        <th class="numeric">Created</th>
                         <th class="numeric">Edit</th>
                         <th class="numeric">Delete</th>
                   

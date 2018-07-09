@@ -46,7 +46,7 @@ class ReservationController extends Controller
 
         
         
-        $res = Reservation::where('start_date', '>=', $pastDate)->orderBy('start_date', 'desc')->get();
+        $res = Reservation::where('start_date', '>=', $pastDate)->orderBy('start_date', 'asc')->get();
 
         $res->map(function ($res) {
 

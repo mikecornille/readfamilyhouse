@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-<h2 class="text-center" style="font-family: 'Raleway', sans-serif; font-weight: bold;"><u>Reservations</u></h2>
+<h2 class="text-center" style="font-family: 'Raleway', sans-serif; font-weight: bold;"><u>Upcoming and Recent Reservations</u></h2>
 @if (session('status'))
     <div class="alert alert-success alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

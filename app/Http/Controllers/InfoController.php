@@ -40,7 +40,7 @@ class InfoController extends Controller
      */
     public function store(Request $request)
     {
-        date_default_timezone_set("America/Chicago");
+        date_default_timezone_set("America/Denver");
         
         $this->validate($request, [
 

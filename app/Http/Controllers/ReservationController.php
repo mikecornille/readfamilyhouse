@@ -38,9 +38,15 @@ class ReservationController extends Controller
      */
     public function index()
     {
+         date_default_timezone_set("America/Denver");
+
+        $carbon = Carbon::now()->subWeeks(2);
+
+        $pastDate = date("Y-m-d", strtotime($carbon));
 
         
-        $res = Reservation::orderBy('start_date', 'desc')->get();
+        
+        $res = Reservation::where('start_date', '>=', $pastDate)->orderBy('start_date', 'desc')->get();
 
         // $res->transform(function($res) {
             
@@ -76,7 +82,7 @@ class ReservationController extends Controller
     {
 
 
-        date_default_timezone_set("America/Chicago");
+        date_default_timezone_set("America/Denver");
         
         $this->validate($request, [
 

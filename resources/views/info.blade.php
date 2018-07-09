@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
     <h2 class="text-center" style="font-family: 'Raleway', sans-serif; font-weight: bold;"><u>House Info</u></h2>
+    @if (session('status'))
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{ session('status') }}</strong> Click the X at the far right to close this notification.
+    </div>
+@endif
     <div class="row">        
         <div id="no-more-tables">
             <table class="col-md-12 table-bordered table-striped table-condensed cf">

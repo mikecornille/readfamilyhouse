@@ -117,6 +117,10 @@ class InfoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $load = Info::find($id);
+
+        $load->delete();
+
+        return back()->with('status', 'Your deletion was successful.');
     }
 }

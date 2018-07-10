@@ -18,7 +18,7 @@ class EventController extends Controller
     	$event_list = [];
     	foreach ($events as $key => $event) {
     		$event_list[] = Calendar::event(
-                'By: ' . $event->user_name . ' - Guests: ' . $event->guest_count . ' - Details: ' . $event->guests,
+                $event->guests . ' (' . $event->guest_count . ')',
                 true,
                 new \DateTime($event->start_date),
                 new \DateTime($event->end_date.' +1 day')
